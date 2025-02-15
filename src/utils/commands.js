@@ -9,6 +9,24 @@ const commands = [
         name: "hey",
         description: "Say hey to Aice Cube",
         type: 1,
+    },
+    {
+        name: "login",
+        description: "Make bot login youtube to get new cookies",
+        type: 1,
+    },
+    {
+        name: "play",
+        description: "Play a song from youtube",
+        type: 1,
+        options: [
+            {
+                type: 3,
+                name: "url",
+                description: "The url of a song on youtube",
+                required: true
+            }
+        ]
     }
 ]
 
