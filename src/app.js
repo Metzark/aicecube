@@ -1,10 +1,25 @@
 //#region Imports
+
 import 'dotenv/config';
 import Client from "./utils/client.js";
-import { Ready } from "./handlers/index.js"
+import { Install } from './utils/commands.js';
+import { Ready, InteractionCreate } from "./handlers/index.js"
 
 //#endregion Imports
 
-Client.on("ready", Ready);
+async function app() {
 
-Client.login(process.env.DISCORD_TOKEN);
+    // Install/Register slash commands
+    await Install();
+
+    // On ready (after logging in)
+    Client.on("ready", Ready);
+
+    // On new interaction
+    Client.on("interactionCreate", InteractionCreate);
+
+    // Login in using token
+    Client.login(process.env.DISCORD_TOKEN);
+}
+
+app();
