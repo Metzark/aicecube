@@ -1,6 +1,6 @@
 //#region Imports
 
-import { Hey, Queue, ShowQueue, Skip } from "../interactions/index.js";
+import { Hey, Queue, ShowQueue, Skip, ReplaceCookies } from "../interactions/index.js";
 
 //#endregion Imports
 
@@ -18,6 +18,9 @@ export default async function InteractionCreate(interaction, state) {
             break;
         case "skip":
             await Skip(interaction, state);
+            break;
+        case "replace_cookies":
+            await ReplaceCookies(interaction);
             break;
         default:
             break;

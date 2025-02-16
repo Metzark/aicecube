@@ -32,6 +32,19 @@ const commands = [
                 required: true
             }
         ]
+    },
+    {
+        name: "replace_cookies",
+        description: `Attach a cookies.txt to replace cookies. Only for ${process.env.DISCORD_BOT_ADMIN_GLOBALNAME}.`,
+        type: 1,
+        options: [
+            {
+                type: 11,
+                name: "file",
+                description: "File containing cookies",
+                required: true
+            }
+        ]
     }
 ]
 

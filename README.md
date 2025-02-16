@@ -48,6 +48,7 @@ Create an environment file (.env) in root directory
 DISCORD_TOKEN=''
 DISCORD_CLIENT_ID=''
 DISCORD_GUILD_ID=''
+DISCORD_BOT_ADMIN_GLOBALNAME=''
 ```
 
 Create a cookies file (cookies.txt) using youtube cookies in root directory. The file must have the following format. Use a browser extension to get this file.
