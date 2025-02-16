@@ -1,6 +1,6 @@
 //#region Imports
 
-import { Hey, Play, Login } from "./interactions/index.js";
+import { Hey, Play } from "./interactions/index.js";
 
 //#endregion Imports
 
@@ -12,9 +12,6 @@ export default async function InteractionCreate(interaction) {
             break;
         case "play":
             await Play(interaction);
-            break;
-        case "login":
-            await Login(interaction);
             break;
         default:
             break;

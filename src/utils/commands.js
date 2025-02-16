@@ -11,11 +11,6 @@ const commands = [
         type: 1,
     },
     {
-        name: "login",
-        description: "Make bot login youtube to get new cookies",
-        type: 1,
-    },
-    {
         name: "play",
         description: "Play a song from youtube",
         type: 1,
