@@ -7,7 +7,7 @@ import { Play, Disconnect } from "./handlers/index.js";
 
 //#endregion Imports
 
-const _10_MIN_ = 30 * 60 * 1000;
+const _10_MIN_ = 10 * 60 * 1000;
 
 async function app() {
     // Main app state
