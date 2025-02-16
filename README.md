@@ -4,7 +4,7 @@ Discord bot named after the legendary rapper and L&amp;O SVU actor Ice Cube...
 
 sudo apt install ffmpeg -y
 
-## Getting Started (AWS EC2 Ubuntu 24.4)
+## Getting Started
 
 ### Updating Packages
 
@@ -60,13 +60,13 @@ Create a cookies file (cookies.txt) using youtube cookies in root directory. The
 { LIST OF COOKIES }
 ```
 
-### Running the App (Normal)
+### Running the App (For dev)
 
 ```
 npm run dev
 ```
 
-### Running the App (Docker)
+### Running the App (Docker for 'production')
 
 ```
 docker build -t aicecube .

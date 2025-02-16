@@ -5,7 +5,8 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "pm2 start src/app.js --name \"aicecube\"",
+    "stop": "pm2 stop aicecube" ,
     "register": "node src/commands.js",
     "dev": "nodemon src/app.js"
   },
@@ -15,6 +16,7 @@
     "dotenv": "^16.4.7",
     "ffmpeg-static": "^5.2.0",
     "fluent-ffmpeg": "^2.1.3",
+    "pm2": "^5.4.3",
     "tweetnacl": "^1.0.3",
     "youtube-dl-exec": "^3.0.15"
   },
