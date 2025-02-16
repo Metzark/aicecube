@@ -17,7 +17,8 @@ async function app() {
         flags: { // Flags used to dynamically update bot activity
             skip: false
         },
-        lastCookieRefreshTime: null
+        lastCookieRefreshTime: null,
+        adminUsername: process.env.DISCORD_BOT_ADMIN_USERNAME // Need this in places that 'process' isn't available
     }
 
     // Initialize some stuff

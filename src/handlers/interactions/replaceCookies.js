@@ -9,12 +9,12 @@ import { promisify } from "util";
 const streamPipeline = promisify(pipeline);
 
 // For handling 'replaceCookies' slash command
-export default async function ReplaceCookies(interaction) {
+export default async function ReplaceCookies(interaction, adminUsername) {
     try {
         // Defer reply in case this takes a bit
         await interaction.deferReply();
 
-        if(interaction.user.username !== process.env.DISCORD_BOT_ADMIN_USERNAME) throw new Error(`You are not ${process.env.DISCORD_BOT_ADMIN_USERNAME}`)
+        if(interaction.user.username !== adminUsername) throw new Error(`You are not ${adminUsername}`)
 
         // Get the file from the interaction
         const file = interaction.options.getAttachment('file');

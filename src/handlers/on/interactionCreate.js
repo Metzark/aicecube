@@ -20,7 +20,7 @@ export default async function InteractionCreate(interaction, state) {
             await Skip(interaction, state);
             break;
         case "replace_cookies":
-            await ReplaceCookies(interaction);
+            await ReplaceCookies(interaction, state.adminUsername);
             break;
         default:
             break;
