@@ -53,5 +53,6 @@ export default async function Play(state) {
     }
     catch (err) {
         console.error(err);
+        state.playing = undefined;
     }
 }

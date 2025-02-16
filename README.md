@@ -16,6 +16,20 @@ sudo apt update
 sudo apt upgrade
 ```
 
+### (Optional) Installing NVM
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+```
+
+```
+source ~/.bashrc
+```
+
+```
+nvm install node
+```
+
 ### Installing Dependencies
 
 ```
@@ -46,8 +60,18 @@ Create a cookies file (cookies.txt) using youtube cookies in root directory. The
 { LIST OF COOKIES }
 ```
 
-### Running the App
+### Running the App (Normal)
 
 ```
 npm run dev
+```
+
+### Running the App (Docker)
+
+```
+docker build -t aicecube .
+```
+
+```
+docker run -t aicecube
 ```
