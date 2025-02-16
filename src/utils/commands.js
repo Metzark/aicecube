@@ -35,7 +35,7 @@ const commands = [
     },
     {
         name: "replace_cookies",
-        description: `Attach a cookies.txt to replace cookies. Only for ${process.env.DISCORD_BOT_ADMIN_GLOBALNAME}.`,
+        description: `Attach a cookies.txt to replace cookies. Only for ${process.env.DISCORD_BOT_ADMIN_USERNAME}.`,
         type: 1,
         options: [
             {

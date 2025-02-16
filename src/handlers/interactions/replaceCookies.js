@@ -14,7 +14,7 @@ export default async function ReplaceCookies(interaction) {
         // Defer reply in case this takes a bit
         await interaction.deferReply();
 
-        if(interaction.user.globalName !== process.env.DISCORD_BOT_ADMIN_GLOBALNAME) throw new Error(`You are not ${process.env.DISCORD_BOT_ADMIN_GLOBALNAME}`)
+        if(interaction.user.username !== process.env.DISCORD_BOT_ADMIN_USERNAME) throw new Error(`You are not ${process.env.DISCORD_BOT_ADMIN_USERNAME}`)
 
         // Get the file from the interaction
         const file = interaction.options.getAttachment('file');
