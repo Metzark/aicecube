@@ -7,7 +7,7 @@ import { Play, Disconnect } from "./handlers/index.js";
 
 //#endregion Imports
 
-const _30_MIN_ = 30 * 60 * 1000;
+const _10_MIN_ = 30 * 60 * 1000;
 
 async function app() {
     // Main app state
@@ -40,7 +40,7 @@ async function app() {
     while (true) {
 
         // Refresh cookies 30 minutes since last refresh has passed
-        if(!state.lastCookieRefreshTime || state.lastCookieRefreshTime + _30_MIN_ < Date.now()) {
+        if(!state.lastCookieRefreshTime || state.lastCookieRefreshTime + _10_MIN_ < Date.now()) {
             state.lastCookieRefreshTime = await RefreshCookies();
         }
 
