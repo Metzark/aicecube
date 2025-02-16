@@ -11,8 +11,18 @@ const commands = [
         type: 1,
     },
     {
-        name: "play",
-        description: "Play a song from youtube",
+        name: "show_queue",
+        description: "Show the current queue of songs to be played",
+        type: 1,
+    },
+    {
+        name: "skip",
+        description: "Skip the song that is currently playing",
+        type: 1,
+    },
+    {
+        name: "queue",
+        description: "Add a song from youtube to the queue",
         type: 1,
         options: [
             {

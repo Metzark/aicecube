@@ -12,6 +12,8 @@ export async function Download(url) {
         // Get video details using youtubedl
         const video = await getVideoDetails(url);
 
+        if (video.duration > 600) throw new Error("Video is over 10 minutes");
+
         // Get video id for file pathing
         const id = video.id;
 
@@ -26,7 +28,7 @@ export async function Download(url) {
 
         // Return the download path if already downloaded
         if(alreadyDownloaded(mp3Path)) {
-            return { error: null, path: mp3Path };
+            return { error: null, path: mp3Path, details: { title: video.title, duration: video.duration } };
         }
 
         // Download the m4a
@@ -43,12 +45,26 @@ export async function Download(url) {
         // Delete m4a file
         deleteNonconverted(m4aPath);
 
-        return convertedMP3.path;
+        return {...convertedMP3.path, details: { title: video.title, duration: video.duration } };
     }
     catch (err) {
         console.error(err);
+        return { error: err.message, path: null, details: { title: null, duration: null } };
+    }
+}
 
-        return { error: err.message, path: null };
+export async function RefreshCookies() {
+    // Refresh cookies by just using youtubedl (Me at the Zoo video lol)
+    try {
+        const video = await getVideoDetails("https://www.youtube.com/watch?v=jNQXAC9IVRw");
+        if (!video) throw new Error("Video retrieval failed, cookies might or might not have been refreshed");      
+    }
+    catch (err) {
+        console.log(err);
+    }
+    finally {
+        // Return the time the cookies were refreshed
+        return Date.now();
     }
 }
 
@@ -61,7 +77,8 @@ async function getVideoDetails(url) {
         preferFreeFormats: true,
         audioFormat: "m4a",
         addHeader: ["referer:youtube.com", "user-agent:googlebot"],
-        cookies: `${process.cwd()}/cookies.txt`
+        cookies: `${process.cwd()}/cookies.txt`,
+        // cookiesFromBrowser: "chrome"
     });
 }
 
@@ -121,6 +138,7 @@ function convertM4AToMP3(m4aPath, mp3Path) {
     });
 }
 
+// Delete a file
 async function deleteNonconverted(path) {
     fs.unlink(path, (err) => {});
 }

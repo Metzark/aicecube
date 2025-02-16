@@ -1,8 +1,8 @@
 //#region Imports
 
-import Ready from './ready.js';
-import InteractionCreate from './interactionCreate.js';
+import Play from "./play.js";
+import Disconnect from "./disconnect.js";
 
 //#endregion Imports
 
-export { Ready, InteractionCreate };
+export { Play, Disconnect };
