@@ -45,7 +45,7 @@ export async function Download(url) {
         // Delete m4a file
         deleteNonconverted(m4aPath);
 
-        return {...convertedMP3.path, details: { title: video.title, duration: video.duration } };
+        return {...convertedMP3, details: { title: video.title, duration: video.duration } };
     }
     catch (err) {
         console.error(err);

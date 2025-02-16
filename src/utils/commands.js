@@ -21,6 +21,11 @@ const commands = [
         type: 1,
     },
     {
+        name: "disconnect",
+        description: "Forcefully disconnect bot from voice channel",
+        type: 1,
+    },
+    {
         name: "queue",
         description: "Add a song from youtube to the queue",
         type: 1,

@@ -9,6 +9,10 @@ export default async function Play(state) {
 
     try {
         const { interaction, path, error } = state.playing;
+        
+        if (error) throw new Error(error);
+
+        if(!path) throw new Error("No audio path was provided");
 
         // Get the voice channel that the user is in
         const channel = interaction.member.voice.channel;
