@@ -17,10 +17,10 @@ export default async function Queue(interaction, queue) {
         if (channel === null) throw new Error("Yo dawg, you must be in a voice channel to use music commands");
 
         // Get the youtube url from options
-        const url = interaction.options.getString('url');
+        const url = interaction.options.getString("url");
 
         // Download and the get to the audio
-        const { error, path, details } = await Download("https://www.youtube.com/watch?v=jNQXAC9IVRw"); 
+        const { error, path, details } = await Download(url); 
 
         // If there was an error downloading, reply and to queue with the error
         if (error) throw new Error(error);
