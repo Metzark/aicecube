@@ -1,6 +1,6 @@
 # AICE CUBE
 
-Discord bot named after the legendary rapper and L&amp;O SVU actor Ice Cube...
+Discord bot named after the legendary rapper...
 
 sudo apt install ffmpeg -y
 
