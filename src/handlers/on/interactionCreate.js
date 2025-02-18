@@ -1,12 +1,15 @@
 //#region Imports
 
-import { Hey, Queue, ShowQueue, Skip, ReplaceCookies, Disconnect } from "../interactions/index.js";
+import { Hey, Queue, ShowQueue, Skip, ReplaceCookies, Disconnect, Info } from "../interactions/index.js";
 
 //#endregion Imports
 
 // Handles Client.on("interactionCreate")
 export default async function InteractionCreate(interaction, state) {
     switch(interaction.commandName) {
+        case "info":
+            await Info(interaction);
+            break;
         case "hey":
             await Hey(interaction);
             break;

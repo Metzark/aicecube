@@ -6,6 +6,11 @@ import { REST, Routes } from 'discord.js';
 
 const commands = [
     {
+        name: "info",
+        description: "Show list of commands",
+        type: 1
+    },
+    {
         name: "hey",
         description: "Say hey to Aice Cube",
         type: 1,

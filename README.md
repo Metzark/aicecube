@@ -1,6 +1,6 @@
 # AICE CUBE
 
-Discord bot named after the legendary rapper...
+Discord bot named after a legendary rapper...
 
 sudo apt install ffmpeg -y
 
