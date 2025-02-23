@@ -55,6 +55,30 @@ const commands = [
                 required: true
             }
         ]
+    },
+    {
+        name: "image",
+        description: "Generate an image using Dall-E-3",
+        type: 1,
+        options: [
+            {
+                type: 3,
+                name: "prompt",
+                description: "Prompt for image generation",
+                required: true
+            },
+            {
+                type:3,
+                name: "size",
+                description: "Size of the image",
+                required: true,
+                choices: [
+                    { name: "1024x1024", value: "1024x1024" },
+                    { name: "1792x1024", value: "1792x1024" },
+                    { name: "1024x1792", value: "1024x1792" }
+                ]
+            }
+        ]
     }
 ]
 

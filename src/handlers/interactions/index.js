@@ -7,8 +7,9 @@ import Skip from "./skip.js";
 import ReplaceCookies from "./replaceCookies.js";
 import Disconnect from "./disconnect.js";
 import Info from "./info.js";
+import Image from "./image.js";
 
 //#endregion Imports
 
 
-export { Hey, Queue, ShowQueue, Skip, ReplaceCookies, Disconnect, Info };
+export { Hey, Queue, ShowQueue, Skip, ReplaceCookies, Disconnect, Info, Image };

@@ -1,6 +1,7 @@
 //#region Imports
 
 import 'dotenv/config';
+import OpenAI from "openai";
 import { Client, Init, Install, Sleep, RefreshCookies } from "./utils/index.js";
 import { Ready, InteractionCreate } from "./handlers/on/index.js"
 import { Play, Disconnect } from "./handlers/index.js";
@@ -17,8 +18,11 @@ async function app() {
         flags: { // Flags used to dynamically update bot activity
             skip: false
         },
-        lastCookieRefreshTime: null,
-        adminUsername: process.env.DISCORD_BOT_ADMIN_USERNAME // Need this in places that 'process' isn't available
+        lastCookieRefreshTime: null, // Used to automatically refresh yt cookies
+        adminUsername: process.env.DISCORD_BOT_ADMIN_USERNAME, 
+        openai: new OpenAI({ apiKey: process.env.DISCORD_BOT_OPENAI_KEY }),
+        lastImageGenerationTime: Date.now(),
+        imageGenerationTimeout: Number(process.env.DISCORD_BOT_IMAGE_GENERATION_TIMEOUT) * 1000 // In ms
     }
 
     // Initialize some stuff

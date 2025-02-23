@@ -49,6 +49,8 @@ DISCORD_TOKEN=''
 DISCORD_CLIENT_ID=''
 DISCORD_GUILD_ID=''
 DISCORD_BOT_ADMIN_USERNAME=''
+DISCORD_BOT_OPENAI_KEY=''
+DISCORD_BOT_IMAGE_GENERATION_TIMEOUT='' # In seconds
 ```
 
 Create a cookies file (cookies.txt) using youtube cookies in root directory. The file must have the following format. Use a browser extension to get this file.

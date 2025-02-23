@@ -1,6 +1,6 @@
 //#region Imports
 
-import { Hey, Queue, ShowQueue, Skip, ReplaceCookies, Disconnect, Info } from "../interactions/index.js";
+import { Hey, Queue, ShowQueue, Skip, ReplaceCookies, Disconnect, Info, Image } from "../interactions/index.js";
 
 //#endregion Imports
 
@@ -24,6 +24,9 @@ export default async function InteractionCreate(interaction, state) {
             break;
         case "replace_cookies":
             await ReplaceCookies(interaction, state.adminUsername);
+            break;
+        case "image":
+            await Image(interaction, state);
             break;
         case "disconnect":
             await Disconnect(interaction, state);
