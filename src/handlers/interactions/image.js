@@ -12,7 +12,7 @@ export default async function Image(interaction, state) {
         // Check if a new image can be generated
         if (Date.now() < state.lastImageGenerationTime + state.imageGenerationTimeout) {
             const waitTime = Math.round((state.lastImageGenerationTime + state.imageGenerationTimeout - Date.now()) / 1000);
-            throw new Error(`You must wait ${waitTime} seconds before generating a new image`);
+            throw new Error(`You must wait ${waitTime} seconds before generating a new image. Shit ain't free dawg.`);
         }
 
         // Get the prompt from options
