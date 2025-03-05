@@ -3,7 +3,7 @@
 import 'dotenv/config';
 import OpenAI from "openai";
 import { Client, Init, Install, Sleep, RefreshCookies } from "./utils/index.js";
-import { Ready, InteractionCreate } from "./handlers/on/index.js"
+import { Ready, InteractionCreate, MessageCreate } from "./handlers/on/index.js"
 import { Play, Disconnect } from "./handlers/index.js";
 
 //#endregion Imports
@@ -36,6 +36,8 @@ async function app() {
 
     // On new interaction
     Client.on("interactionCreate", (interaction) => InteractionCreate(interaction, state));
+
+    Client.on("messageCreate", (message) => MessageCreate(message));
 
     // Login in using token
     Client.login(process.env.DISCORD_TOKEN);
